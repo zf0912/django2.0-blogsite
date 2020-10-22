@@ -22,7 +22,6 @@ SECRET_KEY = '$aq^n))a)+hsapt*sg-*eip8(6fp)ctgu@)xi!6+irni7)$no%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['zzzf.pythonanywhere.com']
 ALLOWED_HOSTS = []
 
 
@@ -55,7 +54,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'   # email相关的
 EMAIL_HOST = 'smtp.qq.com'  # 我们是用qq邮箱进行发送，qq邮箱发送邮件是用到一个SMTP协议，qq邮箱提供的EMAIL_HOST是smtp.qq.com，它通过这个服务器 这个域名去发送
 EMAIL_PORT = 25 # 发送邮件提供的端口号是25
 EMAIL_HOST_USER = '1248285187@qq.com'  # 邮箱地址
-# EMAIL_HOST_PASSWORD = 'dhvbwihfvbuehccc'    # 授权码
 EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']    # 授权码
 EMAIL_SUBJECT_PREFIX = '[张张张的博客]'   # 发送前缀
 EMAIL_USE_TLS = True # 与SMTP服务器通信时，是否启动TLS链接（安全链接）
