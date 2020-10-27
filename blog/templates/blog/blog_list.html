@@ -22,7 +22,17 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
 				<div class=" panel panel-default">
-					<div class="panel-heading">{% block blog_list_title %}博客列表{% endblock %}</div>	<!--需要全部文章的数量，可以用page_of_blogs找到它的paginator分页器方法，然后分页器有count属性，得到全部数量-->
+					<div class="panel-heading">
+						<div>
+							{% block blog_list_title %}博客列表{% endblock %}
+						</div>
+						{% if user.is_staff or user.is_superuser %} <!--判断一下该用户是否是有进入后台管理的权限，或者是不是超级管理员-->
+							<div class="blog-add pull-right">
+								<span><a class="glyphicon glyphicon-plus" href="{% url 'admin:blog_blog_add' %}">新增博客</a></span>
+							</div>
+						{% endif %}
+					</div>	
+					<!--需要全部文章的数量，可以用page_of_blogs找到它的paginator分页器方法，然后分页器有count属性，得到全部数量-->
 					<div class="panel-body">
 						{% for blog in blogs %}	<!-- 这里page_of_blogs.object_list表示该页的具体每篇博客 -->
 							<div class="blog">

@@ -12,6 +12,10 @@ div.blog h3 {
 div.blog p.blog.info {
 	margin-bottom: 0;
 }
+div.blog-add{
+	list-style: none;
+	margin-top: -1.5em;
+}
 
 div.paginator {
 	text-align: center; /*居中*/
